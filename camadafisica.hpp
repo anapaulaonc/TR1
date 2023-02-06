@@ -16,7 +16,7 @@ using namespace std;
  void MeioDeComunicacao(vector<int> fluxoBrutoDeBits);
 
 //Camada fisica de recepcao
- void CamadaFisicaReceptora(vector<int> quadro);
+ void CamadaFisicaRecromanoeptora(vector<int> quadro);
  vector<int> CamadaFisicaReceptoraCodificacaoBinaria(vector<int> quadro);
  vector<int> CamadaFisicaReceptoraCodificacaoManchester(vector<int> quadro);
  vector<int> CamadaFisicaReceptoraCodificacaoBipolar(vector<int> quadro);
