@@ -1,7 +1,7 @@
 #include <iostream>
 #include "./camadafisica.hpp"
 
-#define TIPO_CODIFICACAO 1
+#define TIPO_CODIFICACAO 2
 
 void AplicacaoTransmissora() {
   string mensagem;
@@ -13,7 +13,6 @@ void AplicacaoTransmissora() {
 
 void CamadaDeAplicacaoTransmissora(string mensagem) {
   vector<int> quadro = codificaString(mensagem);
-
   CamadaFisicaTransmissora(quadro);
 }
 
@@ -60,6 +59,12 @@ vector<int> CamadaFisicaTransmissoraCodificacaoManchester(vector<int> quadro) {
 }
 
 vector<int> CamadaFisicaTransmissoraCodificacaoBipolar(vector<int> quadro) {
+
+  for(int i = 0; i < quadro.size(); i++){
+    cout << quadro[i];
+  }
+  cout << endl;
+
   vector<int> fluxoBrutoDeBits(quadro.size() * 2);
   bool alternador = true;
 
@@ -68,6 +73,11 @@ vector<int> CamadaFisicaTransmissoraCodificacaoBipolar(vector<int> quadro) {
     fluxoBrutoDeBits[i * 2 + 1] = alternador ? quadro[i] * -5 : quadro[i] * 5;
     alternador = !alternador;
   }
+
+  for(int i = 0; i < fluxoBrutoDeBits.size(); i++){
+    cout << fluxoBrutoDeBits[i];
+  }
+  cout << endl;
 
   return fluxoBrutoDeBits;
 }
